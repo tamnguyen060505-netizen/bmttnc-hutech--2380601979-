@@ -6,7 +6,7 @@ while True:
     if line.lower() == 'done':
         break
     lines.append(line)
-    #Chuyen cac dong thanh chu in hoa va in ra man hinh
-    print("\nCac dong da nhap sau khi chuyen thanh chu in hoa: ")
-    for line in lines:
-        print(line.upper())
+ #Chuyen cac dong thanh chu in hoa va in ra man hinh
+print("\nCac dong da nhap sau khi chuyen thanh chu in hoa: ")
+for line in lines:
+    print(line.upper())
