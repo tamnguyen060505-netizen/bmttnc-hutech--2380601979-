@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUTECH - Bảo Mật Thông Tin Nâng Cao</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7fa;
+            color: #334155;
+        }
+        .navbar-hutech {
+            background: linear-gradient(135deg, #00569d 0%, #003d70 100%);
+            border-bottom: 4px solid #f7941d;
+        }
+        .student-info-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px dashed #cbd5e1;
+        }
+        .cipher-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            height: 100%;
+        }
+        .cipher-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 86, 157, 0.15);
+            border-color: #00569d;
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn-hutech {
+            background-color: #00569d;
+            color: white;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .btn-hutech:hover {
+            background-color: #003d70;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 86, 157, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark navbar-hutech py-3 shadow-sm">
+        <div class="container text-center justify-content-center flex-column">
+            <h1 class="navbar-brand m-0 fs-3 fw-bold text-uppercase tracking-wide">
+                <i class="fa-solid fa-shield-halved me-2 text-warning"></i> Bài Thực Hành Bảo Mật Thông Tin Nâng Cao
+            </h1>
+            <span class="text-white-50 small mt-1">Khoa Công Nghệ Thông Tin - 2026</span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="student-info-card p-4 mb-5 mx-auto card-body d-flex flex-column flex-sm-row justify-content-between align-items-center style="max-width: 900px;">
+            <div class="d-flex align-items-center mb-3 mb-sm-0">
+                <div class="bg-primary-subtle text-primary p-3 rounded-circle me-3">
+                    <i class="fa-solid fa-user-graduate fs-4"></i>
+                </div>
+                <div>
+                    <span class="text-muted text-uppercase fw-bold small d-block">Sinh viên thực hiện</span>
+                    <h5 class="m-0 fw-bold text-dark" style="color: #00569d !important;">Nguyễn Chí Tâm</h5>
+                </div>
+            </div>
+            <div class="text-sm-end">
+                <span class="text-muted text-uppercase fw-bold small d-block">Mã số sinh viên</span>
+                <h5 class="m-0 fw-bold text-secondary">2380601979</h5>
+            </div>
+        </div>
+
+        <div class="text-center mb-5">
+            <h3 class="fw-bold position-relative d-inline-block pb-2" style="color: #1e293b;">
+                BẢNG ĐIỀU KHIỂN THUẬT TOÁN MÃ HÓA
+                <span class="position-absolute bottom-0 start-50 translate-middle-x" style="width: 60px; height: 3px; background-color: #f7941d;"></span>
+            </h3>
+            <p class="text-muted mt-2">Vui lòng chọn một phân hệ mật mã cổ điển dưới đây để tiến hành thử nghiệm mã hóa và giải mã dữ liệu</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card cipher-card p-4 text-center">
+                    <div class="icon-box bg-primary-subtle text-primary mx-auto">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    </div>
+                    <h5 class="card-title fw-bold text-dark mb-2">Caesar Cipher</h5>
+                    <p class="card-text text-muted small mb-4">Thuật toán dịch chuyển vị trí ký tự trong bảng chữ cái theo số bước (Shift Key) cố định.</p>
+                    <a href="/caesar" class="btn btn-hutech w-100 mt-auto py-2">Truy cập phân hệ <i class="fa-solid fa-angle-right ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card cipher-card p-4 text-center">
+                    <div class="icon-box bg-success-subtle text-success mx-auto">
+                        <i class="fa-solid fa-font"></i>
+                    </div>
+                    <h5 class="card-title fw-bold text-dark mb-2">Vigenère Cipher</h5>
+                    <p class="card-text text-muted small mb-4">Mật mã đa bảng chữ cái thay thế, sử dụng một chuỗi từ khóa (Key string) lặp tuần hoàn toán học.</p>
+                    <a href="/vigenere" class="btn btn-hutech w-100 mt-auto py-2">Truy cập phân hệ <i class="fa-solid fa-angle-right ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card cipher-card p-4 text-center">
+                    <div class="icon-box bg-warning-subtle text-warning mx-auto">
+                        <i class="fa-solid fa-lines-leaning"></i>
+                    </div>
+                    <h5 class="card-title fw-bold text-dark mb-2">Rail Fence Cipher</h5>
+                    <p class="card-text text-muted small mb-4">Mật mã hoán vị ma trận zigzag, phân chia dữ liệu ký tự theo số tầng đường ray bảo mật.</p>
+                    <a href="/railfence" class="btn btn-hutech w-100 mt-auto py-2">Truy cập phân hệ <i class="fa-solid fa-angle-right ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card cipher-card p-4 text-center">
+                    <div class="icon-box bg-danger-subtle text-danger mx-auto">
+                        <i class="fa-solid fa-table-cells"></i>
+                    </div>
+                    <h5 class="card-title fw-bold text-dark mb-2">Playfair Cipher</h5>
+                    <p class="card-text text-muted small mb-4">Kỹ thuật mã hóa thay thế đa ký tự theo từng cặp, dựa trên ma trận vuông đồ họa quy chuẩn 5x5.</p>
+                    <a href="/playfair" class="btn btn-hutech w-100 mt-auto py-2">Truy cập phân hệ <i class="fa-solid fa-angle-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-top text-center py-3 mt-5 text-muted small shadow-sm">
+        <div class="container">
+            © 2026 HUTECH - Trường Đại học Công nghệ TP.HCM | Khoa Công nghệ thông tin
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
