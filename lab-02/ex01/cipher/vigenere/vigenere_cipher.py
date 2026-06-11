@@ -1,33 +1,47 @@
+# Trong file cipher/vigenere.py
+
 class VigenereCipher:
     def __init__(self):
         pass
-    
-    def vigenere_encrypt(self, plain_text, key):
-        encrypted_text = ""
+
+    # Đảm bảo đặt tên hàm chính xác là encrypt_text
+    def encrypt_text(self, text, key):
+        text = str(text)
+        key = "".join([c.upper() for c in key if c.isalpha()])
+        if not key:
+            return "LỖI: Khóa không hợp lệ."
+            
+        result = []
         key_index = 0
-        for char in plain_text:
+        for char in text:
             if char.isalpha():
-                key_shift = ord(key[key_index % len(key)].upper()) - ord('A')
+                shift = ord(key[key_index % len(key)]) - 65
                 if char.isupper():
-                    encrypted_text += chr((ord(char) - ord('A') + key_shift) % 26 + ord('A'))
+                    result.append(chr((ord(char) - 65 + shift) % 26 + 65))
                 else:
-                    encrypted_text += chr((ord(char) - ord('a') + key_shift) % 26 + ord('a'))
+                    result.append(chr((ord(char) - 97 + shift) % 26 + 97))
                 key_index += 1
             else:
-                encrypted_text += char
-        return encrypted_text
-    
-    def vigenere_decrypt(self, encrypted_text, key):
-        decrypted_text = ""
+                result.append(char)
+        return "".join(result)
+
+    # Đảm bảo đặt tên hàm chính xác là decrypt_text
+    def decrypt_text(self, text, key):
+        text = str(text)
+        key = "".join([c.upper() for c in key if c.isalpha()])
+        if not key:
+            return "LỖI: Khóa không hợp lệ."
+            
+        result = []
         key_index = 0
-        for char in encrypted_text:
+        for char in text:
             if char.isalpha():
-                key_shift = ord(key[key_index % len(key)].upper()) - ord('A')
+                shift = ord(key[key_index % len(key)]) - 65
                 if char.isupper():
-                    decrypted_text += chr((ord(char) - ord('A') + key_shift) % 26 + ord('A'))
+                    result.append(chr((ord(char) - 65 - shift) % 26 + 65))
                 else:
-                    decrypted_text += chr((ord(char) - ord('a') + key_shift) % 26 + ord('a'))
+                    result.append(chr((ord(char) - 97 - shift) % 26 + 97))
                 key_index += 1
             else:
-                decrypted_text += char
-        return decrypted_text
+                result.append(char)
+        return "".join(result)

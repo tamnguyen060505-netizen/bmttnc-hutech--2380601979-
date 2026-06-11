@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher - HUTECH Security</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7fa; color: #334155; }
+        .navbar-hutech { background: linear-gradient(135deg, #00569d 0%, #003d70 100%); border-bottom: 4px solid #f7941d; }
+        .card-custom { border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); background: #fff; overflow: hidden; }
+        .nav-tabs .nav-link { border: none; color: #64748b; font-weight: 500; padding: 12px 20px; }
+        .nav-tabs .nav-link.active { color: #00569d; border-bottom: 3px solid #00569d; font-weight: 600; background: none; }
+        .form-control:focus { border-color: #00569d; box-shadow: 0 0 0 0.25rem rgba(0, 86, 157, 0.15); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark navbar-hutech py-3 shadow-sm mb-5">
+        <div class="container text-center justify-content-center">
+            <h2 class="navbar-brand m-0 fs-4 fw-bold text-uppercase"><i class="fa-solid fa-arrow-right-arrow-left me-2 text-warning"></i> Phân Hệ Mật Mã Caesar</h2>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card card-custom max-width mx-auto shadow-sm" style="max-width: 750px;">
+            <div class="card-header bg-white border-bottom-0 pt-4 px-4">
+                <ul class="nav nav-tabs card-header-tabs" id="caesarTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="encrypt-tab" data-bs-toggle="tab" data-bs-target="#encrypt-pane" type="button" role="tab"><i class="fa-solid fa-lock me-2 text-success"></i>MÃ HÓA (ENCRYPT)</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="decrypt-tab" data-bs-toggle="tab" data-bs-target="#decrypt-pane" type="button" role="tab"><i class="fa-solid fa-lock-open me-2 text-danger"></i>GIẢI MÃ (DECRYPT)</button>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card-body p-4 tab-content" id="caesarTabContent">
+                <div class="tab-pane fade show active" id="encrypt-pane" role="tabpanel">
+                    <form action="/encrypt" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-secondary">Văn bản cần mã hóa (Plain Text)</label>
+                            <textarea name="inputPlainText" class="form-control rounded-3" rows="3" placeholder="Nhập chuỗi văn bản rõ..." required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-secondary">Khóa dịch chuyển (Key - Số nguyên)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-key"></i></span>
+                                <input type="number" name="inputKeyPlain" class="form-control rounded-3" placeholder="Ví dụ: 3" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 py-2.5 fw-semibold rounded-3"><i class="fa-solid fa-shield-halved me-2"></i> Tiến hành mã hóa</button>
+                    </form>
+                </div>
+
+                <div class="tab-pane fade" id="decrypt-pane" role="tabpanel">
+                    <form action="/decrypt" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-secondary">Văn bản cần giải mã (Cipher Text)</label>
+                            <textarea name="inputCipherText" class="form-control rounded-3" rows="3" placeholder="Nhập chuỗi mật mã..." required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-secondary">Khóa dịch chuyển (Key - Số nguyên)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-key"></i></span>
+                                <input type="number" name="inputKeyCipher" class="form-control rounded-3" placeholder="Ví dụ: 3" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100 py-2.5 fw-semibold rounded-3"><i class="fa-solid fa-unlock-keyhole me-2"></i> Tiến hành giải mã</button>
+                    </form>
+                </div>
+                
+                <hr class="my-4 opacity-25">
+                <div class="text-center">
+                    <a href="/" class="text-decoration-none text-muted small fw-medium"><i class="fa-solid fa-house me-1"></i> Quay lại bảng điều khiển chính</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
