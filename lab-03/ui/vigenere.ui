@@ -10,11 +10,6 @@
     <height>600</height>
    </rect>
   </property>
-  <property name="font">
-   <font>
-    <pointsize>26</pointsize>
-   </font>
-  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -22,56 +17,45 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>50</y>
-      <width>261</width>
+      <x>300</x>
+      <y>40</y>
+      <width>291</width>
       <height>61</height>
      </rect>
     </property>
-    <property name="text">
-     <string>CAESAR CIPHER</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>120</y>
-      <width>91</width>
-      <height>21</height>
-     </rect>
-    </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Plain text: </string>
+     <string>VIGENERE CIPHER</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QPlainTextEdit" name="txt_plain_text">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>230</y>
-      <width>91</width>
-      <height>21</height>
+      <x>200</x>
+      <y>110</y>
+      <width>521</width>
+      <height>71</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Key: </string>
+   </widget>
+   <widget class="QPlainTextEdit" name="txt_cipher_text">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>300</y>
+      <width>521</width>
+      <height>71</height>
+     </rect>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>90</x>
       <y>320</y>
       <width>101</width>
       <height>21</height>
@@ -86,10 +70,28 @@
      <string>Cipher text: </string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>230</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Key: </string>
+    </property>
+   </widget>
    <widget class="QPushButton" name="btn_encrypt">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>260</x>
       <y>410</y>
       <width>81</width>
       <height>31</height>
@@ -107,7 +109,7 @@
    <widget class="QPushButton" name="btn_decrypt">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>500</x>
       <y>410</y>
       <width>81</width>
       <height>31</height>
@@ -122,34 +124,32 @@
      <string>Decrypt</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="txt_plain_text">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>110</y>
-      <width>521</width>
-      <height>71</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPlainTextEdit" name="txt_key">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>200</x>
       <y>210</y>
       <width>521</width>
       <height>51</height>
      </rect>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="txt_cipher_text">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>300</y>
-      <width>521</width>
-      <height>71</height>
+      <x>90</x>
+      <y>120</y>
+      <width>91</width>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Plain text: </string>
     </property>
    </widget>
   </widget>
